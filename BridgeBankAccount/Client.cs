@@ -12,8 +12,8 @@ namespace BridgeBankAccount
 
         public string ClientName {get; set;}
         public string Birthday { get; set; }
-        public double StartingCheckingBalance { get; set; }
-        public double StartingSavingsBalance { get; set; }
+        public double checkingAccount { get; set; }
+        public double savingsAccount { get; set; }
 
 
         //constructors:
@@ -22,12 +22,12 @@ namespace BridgeBankAccount
             //default constructor
         }
 
-        public Client(string name, string birthday, double checking, double savings)
+        public Client(string name, string birthday, int checkingNumber, int savingsNumber)
         {
             this.ClientName = name;
             this.Birthday = birthday;
-            this.StartingCheckingBalance = checking;
-            this.StartingSavingsBalance = savings;
+            this.checkingAccount = checkingNumber;
+            this.savingsAccount = savingsNumber;
         }
 
         //method:

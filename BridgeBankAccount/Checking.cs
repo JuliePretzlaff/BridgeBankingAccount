@@ -10,6 +10,7 @@ namespace BridgeBankAccount
     {
         //properties:
 
+
         public Checking(int accountNum, double initBalance)
         {
             this.AccountNumber = accountNum;
@@ -23,14 +24,20 @@ namespace BridgeBankAccount
             return balance;
         }
 
-        public override void DepositMoney(double deposit)
+        public override void DepositMoney()
         {
+            Console.WriteLine("How much would you like to deposit?");
+            double deposit = double.Parse(Console.ReadLine());
             AccountBalance = AccountBalance + deposit;
+            Console.WriteLine("Your current checking account balance is: $" + AccountBalance);
         }
 
-        public override void WithdrawMoney(double withdraw)
+        public override void WithdrawMoney()
         {
+            Console.WriteLine("How much would you like to withdraw?");
+            double withdraw = double.Parse(Console.ReadLine());
             AccountBalance = AccountBalance - withdraw;
+            Console.WriteLine("Your current checking account balance is: $" + AccountBalance);
         }
 
 

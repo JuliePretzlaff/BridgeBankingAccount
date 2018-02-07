@@ -17,9 +17,9 @@ namespace BridgeBankAccount
         //methods:
         public abstract double ReturnBalance(double balance);
 
-        public abstract void DepositMoney(double deposit);
+        public abstract void DepositMoney();
 
-        public abstract void WithdrawMoney(double withdraw);
+        public abstract void WithdrawMoney();
 
     }
 }

@@ -29,9 +29,6 @@ namespace BridgeBankAccount
             }
             savingsBalance = userSavings;
 
-            //creating instance of client with the info provided:
-            Client client1 = new Client(name, birthday, checkingBalance, savingsBalance);
-
             //create client's checking account & savings account number w random number:
             int checkingAccount;
             int savingsAccount;
@@ -44,6 +41,11 @@ namespace BridgeBankAccount
             checkingAccount = numbersArray[0];
             savingsAccount = numbersArray[1];
 
+
+            //creating instance of client with the info provided:
+            Client client1 = new Client(name, birthday, checkingAccount, savingsAccount);
+
+    
             //Console.WriteLine(checkingAccount + " + " + savingsAccount);
 
             //create instance of client's checking account:
@@ -71,22 +73,24 @@ namespace BridgeBankAccount
                 userChoice = int.Parse(Console.ReadLine());
 
                 //switch case
-                switch(userChoice)
+                switch (userChoice)
                 {
                     case 1:
                         client1.ClientInfo();
+                        Console.WriteLine("Checking account number: " + client1.checkingAccount);
+                        Console.WriteLine("Savings account number: " + client1.savingsAccount);
                         break;
 
                     case 2:
-                        Console.WriteLine("Would you like to view your checking or savings balance?");
+                        Console.WriteLine("Type \"1\" for checking account and type \"2\" for savings account.");
                         string choice = Console.ReadLine().ToLower();
-                        if (choice == "checking")
+                        if (choice == "1")
                         {
-                            checkClient1.ReturnBalance(checkingBalance);
+                            Console.WriteLine("Your current account balance is $" + checkClient1.ReturnBalance(checkingBalance));
                         }
-                        else if (choice == "Savings")
+                        else if (choice == "2")
                         {
-                            checkClient1.ReturnBalance(savingsBalance);
+                            Console.WriteLine("Your current account balance is $" + checkClient1.ReturnBalance(savingsBalance));
                         }
                         else
                         {
@@ -95,15 +99,15 @@ namespace BridgeBankAccount
                         break;
 
                     case 3:
-                        Console.WriteLine("Would you like to deposit to your checking or savings account?");
+                        Console.WriteLine("Type \"1\" for checking account and type \"2\" for savings account.");
                         choice = Console.ReadLine().ToLower();
-                        if (choice == "checking")
+                        if (choice == "1")
                         {
-                            //call method
+                            checkClient1.DepositMoney();
                         }
-                        else if (choice == "Savings")
+                        else if (choice == "2")
                         {
-                            //call method
+                            savingsClient1.DepositMoney();
                         }
                         else
                         {
@@ -112,15 +116,15 @@ namespace BridgeBankAccount
                         break;
 
                     case 4:
-                        Console.WriteLine("Would you like to withdraw from your checking or savings account?");
+                        Console.WriteLine("Type \"1\" for checking account and type \"2\" for savings account.");
                         choice = Console.ReadLine().ToLower();
-                        if (choice == "checking")
+                        if (choice == "1")
                         {
-                            //call method
+                            checkClient1.WithdrawMoney();
                         }
-                        else if (choice == "Savings")
+                        else if (choice == "2")
                         {
-                            //call method
+                            savingsClient1.WithdrawMoney();
                         }
                         else
                         {
@@ -133,9 +137,10 @@ namespace BridgeBankAccount
 
                     default:
                         Console.WriteLine("Please enter a valid choice");
-                            break;
+                        break;
                 }
             } while (userChoice != 5);
+            Console.WriteLine("You have quit the program.");
         }
     }
 }
