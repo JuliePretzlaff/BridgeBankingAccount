@@ -9,17 +9,17 @@ namespace BridgeBankAccount
     public abstract class Account
     {
         //properties:
-        public int AccountNumber { get; }
+        public int AccountNumber { get; set; }
         public double AccountBalance { get; set; }
-        public string AccountType { get; }
+        public string AccountType { get; set; }
 
 
         //methods:
-        public abstract double ReturnBalance(int balance);
+        public abstract double ReturnBalance(double balance);
 
-        public abstract void DepositMoney(int deposit);
+        public abstract void DepositMoney(double deposit);
 
-        public abstract void WithdrawMoney(int withdraw);
+        public abstract void WithdrawMoney(double withdraw);
 
     }
 }
