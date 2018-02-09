@@ -12,8 +12,8 @@ namespace BridgeBankAccount
 
         public string ClientName {get; set;}
         public string Birthday { get; set; }
-        public double checkingAccount { get; set; }
-        public double savingsAccount { get; set; }
+        public double CheckingAccount { get; set; }
+        public double SavingsAccount { get; set; }
 
 
         //constructors:
@@ -26,8 +26,8 @@ namespace BridgeBankAccount
         {
             this.ClientName = name;
             this.Birthday = birthday;
-            this.checkingAccount = checkingNumber;
-            this.savingsAccount = savingsNumber;
+            this.CheckingAccount = checkingNumber;
+            this.SavingsAccount = savingsNumber;
         }
 
         //method:
@@ -36,6 +36,8 @@ namespace BridgeBankAccount
             Console.WriteLine("\nClient personal info: ");
             Console.WriteLine("Client name: " + ClientName);
             Console.WriteLine("Client birthday: " + Birthday);
+            Console.WriteLine("Checking account number: " + CheckingAccount);
+            Console.WriteLine("Savings account number: " + SavingsAccount);
         }
 
     }

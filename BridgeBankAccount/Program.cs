@@ -46,7 +46,6 @@ namespace BridgeBankAccount
             Client client1 = new Client(name, birthday, checkingAccount, savingsAccount);
 
     
-            //Console.WriteLine(checkingAccount + " + " + savingsAccount);
 
             //create instance of client's checking account:
             Checking checkClient1 = new Checking(checkingAccount, checkingBalance);
@@ -77,8 +76,6 @@ namespace BridgeBankAccount
                 {
                     case 1:
                         client1.ClientInfo();
-                        Console.WriteLine("Checking account number: " + client1.checkingAccount);
-                        Console.WriteLine("Savings account number: " + client1.savingsAccount);
                         break;
 
                     case 2:
